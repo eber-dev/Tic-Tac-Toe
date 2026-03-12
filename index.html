@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="encabezado">
-            <img src="" alt="">
+            <img src="./images/tictactoe.png" alt="tictactoe">
             <h1>TicTacToe Web Master</h1>
         </div>
          <div class="campo">
@@ -25,23 +25,57 @@
                 <div class="casilla"></div>
             </div>
             <div class="datos">
+                <p>Settings</p>
                 <div class="modo">
-                    <button class="pvp1">
-                        <img src="" alt="">
-                        <p>[Player vs Player]</p>
-                    </button>
-                    <button class="pvc1">
-                        <img src="" alt="">
-                        <p>[Player vs PC]</p>
-                    </button>
+                    <p>Game Mode</p>
+                    <div class="botonesconfig">
+                        <button class="pvp1">
+                            <img src="./images/pvp.png" alt="">
+                            <p>[Player vs Player]</p>
+                        </button>
+                        <button class="pvc1">
+                            <img src="./images/playervspc.png" alt="">
+                            <p>[Player vs PC]</p>
+                        </button>
+                    </div>
                 </div>
                 <div class="estado">
-                    <div class="info"></div>
+                    <h2>Game Status</h2>
+                    <div class="info">
+                        <p>Score:</p>
+                        <div class="puntuaciones"></div>
+                        <p>Current Turn</p>
+                        <div class="turnoactual"></div>
+                    </div>
                     <button class="reiniciar">Reset</button>
                 </div>
             </div>
          </div>
     </div>
+
+    <dialog id="modal1">
+        <form action="" method="post">
+            <div class="info">
+                <label for="nombre1">Name 1:</label>
+                <input type="text" id="nombre1" name="nombre1" required>
+            </div>
+            <div class="info">
+                <label for="nombre2">Name 2:</label>
+                <input type="text" id="nombre2" name="nombre2" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </dialog>
+
+    <dialog id="modal2">
+        <form action="" method="post">
+            <div class="info">
+                <label for="nombre3">Name: </label>
+                <input type="text" id="nombre3" name="nombre3" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </dialog>
 
 
 
