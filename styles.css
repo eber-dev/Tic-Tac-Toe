@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+}
+
+.container{
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.encabezado{
+    display: flex;
+    border: 1px solid blue;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex: 1;
+}
+
+.encabezado > img{
+    height: 2.5rem;
+}
+
+.campo{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 5.5rem;
+    flex: 6;
+    border-radius: 20px;
+}
+
+.michi{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    border: 1px solid peru;
+    border-radius: 15px;
+    margin: 3rem;
+    overflow: hidden;
+}
+
+.casilla{
+    border: 1px solid pink
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 3rem;
+    border-radius: 20px;
+}
+
+.datos > p{
+    text-align: center;
+}
+
+.modo{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    text-align: center;
+    align-items: center;
+    flex: 2;
+}
+
+.botonesconfig{
+    display: flex;
+    gap: 5rem;
+}
+
+.pvp1{
+    display: flex;
+    flex-direction: column;
+    width: 9rem;
+    height: 7rem;
+}
+
+.pvp1 > img{
+    height: 5rem;
+    width: auto;
+}
+
+.pvc1{
+    display: flex;
+    flex-direction: column;
+    width: 9rem;
+    height: 7rem;
+}
+
+.pvc1 > img{
+    height: 5rem;
+    width: auto;
+}
+
+.estado{
+    display: flex;
+    border: 1px solid green;
+    flex-direction: column;
+    flex: 3;
+}
+
+.estado > h2{
+    text-align: center;
+    flex: 1;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid violet;
+    flex: 5;
+}
+
+.estado > button{
+    flex: 1;
+}
