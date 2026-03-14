@@ -35,11 +35,14 @@ const Gameboard = (function (){
             console.log(separador)
             console.log(linea2)
             console.log(separador)
-            console.log(linea3)     
+            console.log(linea3)
+            return board     
         },
         verificarCasilla(fila,columna){
             if(board[fila][columna] != ""){
-                return
+                return false
+            }else{
+                return true
             }
         },
         reiniciar(){
@@ -93,16 +96,19 @@ const Gamecontroller =(function (){
             let validador1 = ""
             let validador2 = ""
             let validador3 = ""
+            let validador4 = ""
+            let validador5 = ""
+            let validador6 = ""
 
             for(let i=0; i<matriz.length;i++){
                 validador+= matriz[i][i]
                 if(validador == "XXX"){
-                    console.log(`Ganador ${player1}`)
+                    console.log(`Ganador ${player1.name}`)
                     nocumple = true
                     return nocumple
                 }else if( validador == "OOO"){
                     if(modo == "modo1"){
-                        console.log(`Ganador ${player2}`)
+                        console.log(`Ganador ${player2.name}`)
                         nocumple = true
                         return nocumple
                     }else if(modo == "modo2"){
@@ -116,12 +122,12 @@ const Gamecontroller =(function (){
             for(let i=0; i<matriz.length;i++){
                 validador0 += matriz[i][matriz.length-1-i]
                 if(validador0 == "XXX"){
-                    console.log(`Ganador ${player1}`)
+                    console.log(`Ganador ${player1.name}`)
                     nocumple = true
                     return nocumple
                 }else if( validador0 == "OOO"){
                     if(modo == "modo1"){
-                        console.log(`Ganador ${player2}`)
+                        console.log(`Ganador ${player2.name}`)
                         nocumple = true
                         return nocumple
                     }else if(modo == "modo2"){
@@ -138,12 +144,12 @@ const Gamecontroller =(function (){
                 validador3+= matriz[2][i]
 
                 if(validador1 == "XXX" || validador2 == "XXX" || validador3 == "XXX" ){
-                    console.log(`Ganador ${player1}`)
+                    console.log(`Ganador ${player1.name}`)
                     nocumple = true
                     return nocumple
                 }else if(validador1 == "OOO" || validador2 == "OOO" || validador3 == "OOO"){
                     if(modo == "modo1"){
-                        console.log(`Ganador ${player2}`)
+                        console.log(`Ganador ${player2.name}`)
                         nocumple = true
                         return nocumple
                     }else if(modo == "modo2"){
@@ -153,17 +159,54 @@ const Gamecontroller =(function (){
                     }
                 }
             }
-        },
-        verificarEmpate(){
-            if(nocumple == false){
-                console.log(`La partida queda en empate`)
+
+            for(let i = 0; i< matriz.length; i++){
+                validador4 += matriz[i][0]
+                validador5 += matriz[i][1]
+                validador6 += matriz[i][2]
+
+                if(validador4 == "XXX" || validador5 == "XXX" || validador6 == "XXX" ){
+                    console.log(`Ganador ${player1.name}`)
+                    nocumple = true
+                    return nocumple
+                }else if(validador4 == "OOO" || validador5 == "OOO" || validador6 == "OOO"){
+                    if(modo == "modo1"){
+                        console.log(`Ganador ${player2.name}`)
+                        nocumple = true
+                        return nocumple
+                    }else if(modo == "modo2"){
+                        console.log(`Ganador PC`)
+                        nocumple = true
+                        return nocumple
+                    }
+                }
+                
             }
+
+
+        },
+        verificarEmpate(matriz){
+            let verficarespacio = ""
+            let lleno
+            for(let i = 0; i<matriz.length;i++){
+                for(let j  = 0; j<matriz.length;j++){
+                    verficarespacio += matriz[i][j]
+                    if(matriz[i][j] == "X" || matriz[i][j] == "O"){
+                        lleno = true
+                    }else{
+                        lleno = false
+                        return lleno
+                    }
+                }
+            }
+            return lleno
         }
     }
 
 })()
 
 const Displaycontroller = (function (){
+    
 
 })()
 
