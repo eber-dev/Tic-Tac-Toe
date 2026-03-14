@@ -29,4 +29,27 @@ const displayController = (function () {
     };
 })();
 
-displayController.mostrar();
+const Gameboard = (function () {
+    let board = [
+        ["", "", ""],
+        ["", "", ""],
+        ["", "", ""],
+    ];
+    return {
+        obtenertablero() {
+            return board;
+        },
+
+        colocarmarca(fila, columna, marca) {
+            board[fila][columna] = marca;
+        },
+
+        reiniciar() {
+            for (let i = 0; i < board.length; i++) {
+                for (let j = 0; j < board[i].length; j++) {
+                    board[i][j] = "";
+                }
+            }
+        },
+    };
+})();
