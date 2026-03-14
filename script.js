@@ -55,6 +55,7 @@ const Gameboard = (function (){
 
 const Gamecontroller =(function (){
     let player1, player2,actual
+    let nocumple = false
     return{
         playervsplayer(name1,name2){
             player1 = player(name1,"X")
@@ -88,62 +89,75 @@ const Gamecontroller =(function (){
         },
         verificarGanador(matriz,modo){
             let validador = ""
+            let validador0 = ""
+            let validador1 = ""
             let validador2 = ""
             let validador3 = ""
-            
-            for(let i=0; i<matriz;i++){
+
+            for(let i=0; i<matriz.length;i++){
                 validador+= matriz[i][i]
                 if(validador == "XXX"){
                     console.log(`Ganador ${player1}`)
-                    return true
+                    nocumple = true
+                    return nocumple
                 }else if( validador == "OOO"){
                     if(modo == "modo1"){
                         console.log(`Ganador ${player2}`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }else if(modo == "modo2"){
                         console.log(`Ganador PC`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }
                 }
             }
 
-            for(let i=0; i<matriz;i++){
-                validador+= matriz[i][matriz.length-1-i]
-                if(validador == "XXX"){
+            for(let i=0; i<matriz.length;i++){
+                validador0 += matriz[i][matriz.length-1-i]
+                if(validador0 == "XXX"){
                     console.log(`Ganador ${player1}`)
-                    return true
-                }else if( validador == "OOO"){
+                    nocumple = true
+                    return nocumple
+                }else if( validador0 == "OOO"){
                     if(modo == "modo1"){
                         console.log(`Ganador ${player2}`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }else if(modo == "modo2"){
                         console.log(`Ganador PC`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }
                 }
             }
 
-            for(let i=0; i<matriz;i++){
-                validador+= matriz[0][i]
+            for(let i=0; i<matriz.length;i++){
+                validador1+= matriz[0][i]
                 validador2+= matriz[1][i]
                 validador3+= matriz[2][i]
 
-                if(validador == "XXX" || validador2 == "XXX" || validador3 == "XXX" ){
+                if(validador1 == "XXX" || validador2 == "XXX" || validador3 == "XXX" ){
                     console.log(`Ganador ${player1}`)
-                    return true
-                }else if( validador == "OOO" || validador2 == "OOO" || validador3 == "OOO"){
+                    nocumple = true
+                    return nocumple
+                }else if(validador1 == "OOO" || validador2 == "OOO" || validador3 == "OOO"){
                     if(modo == "modo1"){
                         console.log(`Ganador ${player2}`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }else if(modo == "modo2"){
                         console.log(`Ganador PC`)
-                        return true
+                        nocumple = true
+                        return nocumple
                     }
                 }
             }
         },
         verificarEmpate(){
-
+            if(nocumple == false){
+                console.log(`La partida queda en empate`)
+            }
         }
     }
 
