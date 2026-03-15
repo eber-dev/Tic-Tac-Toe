@@ -1,4 +1,4 @@
-let jugador1, jugador2;
+let jugador1, jugador2, partida;
 
 const displayController = (function () {
     const casillas = document.querySelectorAll(".casilla");
@@ -29,6 +29,9 @@ const displayController = (function () {
 
             casillas.forEach((casilla) => {
                 casilla.addEventListener("click", () => {
+                    if (partida == false) {
+                        return;
+                    }
                     if (correcto == true) {
                         let coordenadas = casilla.dataset.coordenada;
                         let separacion1 = coordenadas.split(".");
@@ -46,8 +49,10 @@ const displayController = (function () {
                             }
                             if (ganador.name == jugador1) {
                                 console.log(`el ganador es: ${ganador.name}`);
+                                partida = false;
                             } else if (ganador.name == jugador2) {
                                 console.log(`el ganador es: ${ganador.name}`);
+                                partida = false;
                             } else {
                                 if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
                                     console.log("Empate");
