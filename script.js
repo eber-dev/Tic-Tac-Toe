@@ -35,25 +35,29 @@ const displayController = (function () {
                         let coordenadas = casilla.dataset.coordenada;
                         let separacion1 = coordenadas.split(".");
                         let [fila, columna] = separacion1;
-                        console.log(fila);
-                        console.log(columna);
-                        console.log(Gameboard.obtenertablero());
+                        let tablero = Gameboard.obtenertablero();
 
                         if (Gamecontroller.verificarcasilla(Gameboard.obtenertablero(), fila, columna)) {
                             Gameboard.colocarmarca(fila, columna, actual.marca);
+                            casillas.forEach((casilla) => {
+                                if (casilla.dataset.coordenada == `${fila}.${columna}`) {
+                                    casilla.textContent = actual.marca;
+                                }
+                            });
                             actual = Gamecontroller.cambiarturno(actual);
+                            turnoactual.textContent = `${actual.name}`;
                             ganador = Gamecontroller.verificarganador(Gameboard.obtenertablero());
                             if (ganador === null) {
                                 if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
-                                    console.log("Empate");
+                                    puntuaciones.textContent = `Empate`;
                                     partida = false;
                                 }
                             } else {
                                 if (ganador.name == jugador1) {
-                                    console.log(`el ganador es: ${ganador.name}`);
+                                    puntuaciones.textContent = `El ganador es: ${ganador.name}`;
                                     partida = false;
                                 } else if (ganador.name == jugador2) {
-                                    console.log(`el ganador es: ${ganador.name}`);
+                                    puntuaciones.textContent = `El ganador es: ${ganador.name}`;
                                     partida = false;
                                 }
                             }
@@ -115,7 +119,7 @@ const Gamecontroller = (function () {
         iniciojuego() {
             player1 = player(jugador1, "X");
             player2 = player(jugador2, "O");
-            actual = player1;
+            actual = player2;
             return actual;
         },
         cambiarturno(actual) {
