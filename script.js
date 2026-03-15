@@ -75,6 +75,8 @@ const displayController = (function () {
                     casilla.textContent = "";
                 });
                 correcto = false;
+                puntuaciones.textContent = "";
+                turnoactual.textContent = "";
                 console.log(Gameboard.obtenertablero());
             });
         },
