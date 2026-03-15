@@ -27,17 +27,11 @@
                 <div class="datos">
                     <p>Settings</p>
                     <div class="modo">
-                        <p>Game Mode</p>
-                        <div class="botonesconfig">
-                            <button class="pvp1" data-modo="modo1">
-                                <img src="./images/pvp.png" alt="" />
-                                <p>[Player vs Player]</p>
-                            </button>
-                            <button class="pvc1" data-modo="modo2">
-                                <img src="./images/playervspc.png" alt="" />
-                                <p>[Player vs PC]</p>
-                            </button>
-                        </div>
+                        <p>Game</p>
+                        <button class="pvp1" data-modo="modo1">
+                            <img src="./images/pvp.png" alt="" />
+                            <p>[Player vs Player]</p>
+                        </button>
                     </div>
                     <div class="estado">
                         <h2>Game Status</h2>
@@ -54,7 +48,7 @@
         </div>
 
         <dialog id="modal1">
-            <form action="" method="post">
+            <form action="" method="post" class="registro">
                 <div class="info">
                     <label for="nombre1">Name 1:</label>
                     <input type="text" id="nombre1" name="nombre1" required />
@@ -64,16 +58,6 @@
                     <input type="text" id="nombre2" name="nombre2" required />
                 </div>
                 <button type="submit" class="enviarmodo1">Registrar</button>
-            </form>
-        </dialog>
-
-        <dialog id="modal2">
-            <form action="" method="post">
-                <div class="info">
-                    <label for="nombre3">Name: </label>
-                    <input type="text" id="nombre3" name="nombre3" required />
-                </div>
-                <button type="submit" class="enviarmodo2">Registrar</button>
             </form>
         </dialog>
 
