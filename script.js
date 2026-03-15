@@ -22,8 +22,7 @@ const displayController = (function () {
                 jugador2 = document.getElementById("nombre2").value;
                 correcto = true;
                 actual = Gamecontroller.iniciojuego();
-                Gameboard.obtenertablero();
-                console.log(correcto);
+                console.log(Gameboard.obtenertablero());
                 modal1.close();
             });
 
@@ -35,9 +34,12 @@ const displayController = (function () {
                         let [fila, columna] = separacion1;
                         console.log(fila);
                         console.log(columna);
-                        Gameboard.obtenertablero();
-                        actual = Gamecontroller.cambiarturno(actual);
-                        Gameboard.colocarmarca(fila, columna, actual.marca);
+                        console.log(Gameboard.obtenertablero());
+
+                        if (Gamecontroller.verificarcasilla(Gameboard.obtenertablero(), fila, columna)) {
+                            Gameboard.colocarmarca(fila, columna, actual.marca);
+                            actual = Gamecontroller.cambiarturno(actual);
+                        }
                     } else {
                         return;
                     }
@@ -106,6 +108,13 @@ const Gamecontroller = (function () {
             } else if (actual == player2) {
                 actual = player1;
                 return player1;
+            }
+        },
+        verificarcasilla(board, fila, columna) {
+            if (board[fila][columna] === "") {
+                return true;
+            } else {
+                return false;
             }
         },
         verificarganador(board) {
