@@ -35,16 +35,16 @@ const displayController = (function () {
                         let coordenadas = casilla.dataset.coordenada;
                         let separacion1 = coordenadas.split(".");
                         let [fila, columna] = separacion1;
-                        let tablero = Gameboard.obtenertablero();
 
                         if (Gamecontroller.verificarcasilla(Gameboard.obtenertablero(), fila, columna)) {
+                            actual = Gamecontroller.cambiarturno(actual);
                             Gameboard.colocarmarca(fila, columna, actual.marca);
                             casillas.forEach((casilla) => {
                                 if (casilla.dataset.coordenada == `${fila}.${columna}`) {
                                     casilla.textContent = actual.marca;
                                 }
                             });
-                            actual = Gamecontroller.cambiarturno(actual);
+
                             turnoactual.textContent = `${actual.name}`;
                             ganador = Gamecontroller.verificarganador(Gameboard.obtenertablero());
                             if (ganador === null) {
