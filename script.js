@@ -10,6 +10,7 @@ const displayController = (function () {
     const registro = document.querySelector(".registro");
     let correcto = false;
     let actual;
+    let ganador;
     return {
         mostrar() {
             pvp1.addEventListener("click", () => {
@@ -39,6 +40,19 @@ const displayController = (function () {
                         if (Gamecontroller.verificarcasilla(Gameboard.obtenertablero(), fila, columna)) {
                             Gameboard.colocarmarca(fila, columna, actual.marca);
                             actual = Gamecontroller.cambiarturno(actual);
+                            ganador = Gamecontroller.verificarganador(Gameboard.obtenertablero());
+                            if (ganador === null) {
+                                return;
+                            }
+                            if (ganador.name == jugador1) {
+                                console.log(`el ganador es: ${ganador.name}`);
+                            } else if (ganador.name == jugador2) {
+                                console.log(`el ganador es: ${ganador.name}`);
+                            } else {
+                                if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
+                                    console.log("Empate");
+                                }
+                            }
                         }
                     } else {
                         return;
@@ -52,10 +66,6 @@ const displayController = (function () {
                     casilla.textContent = "";
                 });
             });
-
-            if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
-                Gamecontroller.verificarganador(Gameboard.obtenertablero());
-            }
         },
     };
 })();
@@ -149,6 +159,8 @@ const Gamecontroller = (function () {
                 return player1;
             } else if (condicion4 || condicion5 || condicion6) {
                 return player2;
+            } else {
+                return null;
             }
         },
 
