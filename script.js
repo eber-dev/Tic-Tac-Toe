@@ -65,8 +65,73 @@ const Gameboard = (function () {
 })();
 
 const Gamecontroller = (function () {
+    let actual, player1, player2;
     return {
-        iniciojuego() {},
+        iniciojuego() {
+            player1 = player(jugador1, "X");
+            player2 = player(jugador2, "O");
+            actual = player1;
+            return actual;
+        },
+        cambiarturno(actual) {
+            if (actual == player1) {
+                actual = player2;
+                return player2;
+            } else if (actual == player2) {
+                actual = player1;
+                return player1;
+            }
+        },
+        verificarganador(board) {
+            let diagonal1 = "";
+            let diagonal2 = "";
+            let fila1 = "";
+            let fila2 = "";
+            let fila3 = "";
+            let columna1 = "";
+            let columna2 = "";
+            let columna3 = "";
+
+            for (let i = 0; i < board.length; i++) {
+                diagonal1 += board[i][i];
+                diagonal2 += board[i][board.length - 1 - i];
+                fila1 += board[0][i];
+                fila2 += board[1][i];
+                fila3 += board[2][i];
+                columna1 += board[i][0];
+                columna2 += board[i][1];
+                columna3 += board[i][2];
+            }
+
+            let condicion1 = diagonal1 == "XXX" || diagonal2 == "XXX";
+            let condicion2 = fila1 == "XXX" || fila2 == "XXX" || fila3 == "XXX";
+            let condicion3 = columna1 == "XXX" || columna2 == "XXX" || columna3 == "XXX";
+            let condicion4 = diagonal1 == "OOO" || diagonal2 == "OOO";
+            let condicion5 = fila1 == "OOO" || fila2 == "OOO" || fila3 == "OOO";
+            let condicion6 = columna1 == "OOO" || columna2 == "OOO" || columna3 == "OOO";
+
+            if (condicion1 || condicion2 || condicion3) {
+                return player1;
+            } else if (condicion4 || condicion5 || condicion6) {
+                return player2;
+            }
+        },
+
+        vaerificarempate(board) {
+            let verificarcasilla = "";
+            let lleno;
+            for (let i = 0; i < board.length; i++) {
+                for (let j = 0; board[j].length; i++) {
+                    verificarcasilla += board[i][j];
+                    if (board[i][j] == "X" || board[i][j] == "O") {
+                        lleno = true;
+                    } else {
+                        lleno = false;
+                    }
+                }
+            }
+            return lleno;
+        },
     };
 })();
 
