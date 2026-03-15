@@ -1,14 +1,15 @@
 let jugador1, jugador2;
 
 const displayController = (function () {
-    const casillas = document.querySelectorAll(".casillas");
+    const casillas = document.querySelectorAll(".casilla");
     const pvp1 = document.querySelector(".pvp1");
     const puntuaciones = document.querySelector(".puntuaciones");
     const turnoactual = document.querySelector(".turnoactual");
-    const reset = document.querySelector(".reset");
+    const reset = document.querySelector(".reiniciar");
     const modal1 = document.getElementById("modal1");
     const registro = document.querySelector(".registro");
-
+    let correcto = false;
+    let actual;
     return {
         mostrar() {
             pvp1.addEventListener("click", () => {
@@ -19,7 +20,28 @@ const displayController = (function () {
                 e.preventDefault();
                 jugador1 = document.getElementById("nombre1").value;
                 jugador2 = document.getElementById("nombre2").value;
+                correcto = true;
+                actual = Gamecontroller.iniciojuego();
+                Gameboard.obtenertablero();
+                console.log(correcto);
                 modal1.close();
+            });
+
+            casillas.forEach((casilla) => {
+                casilla.addEventListener("click", () => {
+                    if (correcto == true) {
+                        let coordenadas = casilla.dataset.coordenada;
+                        let separacion1 = coordenadas.split(".");
+                        let [fila, columna] = separacion1;
+                        console.log(fila);
+                        console.log(columna);
+                        Gameboard.obtenertablero();
+                        actual = Gamecontroller.cambiarturno(actual);
+                        Gameboard.colocarmarca(fila, columna, actual.marca);
+                    } else {
+                        return;
+                    }
+                });
             });
 
             reset.addEventListener("click", () => {
@@ -28,6 +50,10 @@ const displayController = (function () {
                     casilla.textContent = "";
                 });
             });
+
+            if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
+                Gamecontroller.verificarganador(Gameboard.obtenertablero());
+            }
         },
     };
 })();
@@ -121,7 +147,7 @@ const Gamecontroller = (function () {
             let verificarcasilla = "";
             let lleno;
             for (let i = 0; i < board.length; i++) {
-                for (let j = 0; board[j].length; i++) {
+                for (let j = 0; j < board[i].length; j++) {
                     verificarcasilla += board[i][j];
                     if (board[i][j] == "X" || board[i][j] == "O") {
                         lleno = true;
