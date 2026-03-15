@@ -59,6 +59,7 @@ const displayController = (function () {
                             }
                         }
                     } else {
+                        alert("Debe registrar los nombres antes de jugar");
                         return;
                     }
                 });
@@ -69,6 +70,8 @@ const displayController = (function () {
                 casillas.forEach((casilla) => {
                     casilla.textContent = "";
                 });
+                correcto = false;
+                console.log(Gameboard.obtenertablero());
             });
         },
     };
