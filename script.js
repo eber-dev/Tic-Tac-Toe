@@ -44,17 +44,16 @@ const displayController = (function () {
                             actual = Gamecontroller.cambiarturno(actual);
                             ganador = Gamecontroller.verificarganador(Gameboard.obtenertablero());
                             if (ganador === null) {
-                                return;
-                            }
-                            if (ganador.name == jugador1) {
-                                console.log(`el ganador es: ${ganador.name}`);
-                                partida = false;
-                            } else if (ganador.name == jugador2) {
-                                console.log(`el ganador es: ${ganador.name}`);
-                                partida = false;
-                            } else {
                                 if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
                                     console.log("Empate");
+                                    partida = false;
+                                }
+                            } else {
+                                if (ganador.name == jugador1) {
+                                    console.log(`el ganador es: ${ganador.name}`);
+                                    partida = false;
+                                } else if (ganador.name == jugador2) {
+                                    console.log(`el ganador es: ${ganador.name}`);
                                     partida = false;
                                 }
                             }
