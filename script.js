@@ -1,4 +1,4 @@
-let jugador1, jugador2, partida;
+let jugador1, jugador2, partida, ganador;
 
 const displayController = (function () {
     const casillas = document.querySelectorAll(".casilla");
@@ -10,7 +10,6 @@ const displayController = (function () {
     const registro = document.querySelector(".registro");
     let correcto = false;
     let actual;
-    let ganador;
     return {
         mostrar() {
             pvp1.addEventListener("click", () => {
@@ -56,6 +55,7 @@ const displayController = (function () {
                             } else {
                                 if (Gamecontroller.vaerificarempate(Gameboard.obtenertablero())) {
                                     console.log("Empate");
+                                    partida = false;
                                 }
                             }
                         }
@@ -170,19 +170,14 @@ const Gamecontroller = (function () {
         },
 
         vaerificarempate(board) {
-            let verificarcasilla = "";
-            let lleno;
             for (let i = 0; i < board.length; i++) {
                 for (let j = 0; j < board[i].length; j++) {
-                    verificarcasilla += board[i][j];
-                    if (board[i][j] == "X" || board[i][j] == "O") {
-                        lleno = true;
-                    } else {
-                        lleno = false;
+                    if (board[i][j] === "") {
+                        return false;
                     }
                 }
             }
-            return lleno;
+            return true;
         },
     };
 })();
