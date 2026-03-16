@@ -9,6 +9,8 @@ const displayController = (function () {
     const modal1 = document.getElementById("modal1");
     const registro = document.querySelector(".registro");
     const cerrarmodal = document.getElementById("cerrar_modal");
+    const obtener1 = document.getElementById("nombre1");
+    const obtener2 = document.getElementById("nombre2");
     let correcto = false;
     let actual;
     return {
@@ -30,6 +32,8 @@ const displayController = (function () {
                 actual = Gamecontroller.iniciojuego();
                 console.log(Gameboard.obtenertablero());
                 modal1.close();
+                obtener1.value = "";
+                obtener2.value = "";
             });
 
             casillas.forEach((casilla) => {
