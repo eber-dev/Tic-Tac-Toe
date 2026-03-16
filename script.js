@@ -54,6 +54,11 @@ const displayController = (function () {
                             casillas.forEach((casilla) => {
                                 if (casilla.dataset.coordenada == `${fila}.${columna}`) {
                                     casilla.textContent = actual.marca;
+                                    if (actual.marca === "X") {
+                                        casilla.style.color = "red";
+                                    } else if (actual.marca === "O") {
+                                        casilla.style.color = "blue";
+                                    }
                                 }
                             });
 
