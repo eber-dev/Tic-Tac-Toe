@@ -48,17 +48,23 @@
         </div>
 
         <dialog id="modal1">
-            <form action="" method="post" class="registro">
-                <div class="info">
-                    <label for="nombre1">Name 1:</label>
-                    <input type="text" id="nombre1" name="nombre1" required />
-                </div>
-                <div class="info">
-                    <label for="nombre2">Name 2:</label>
-                    <input type="text" id="nombre2" name="nombre2" required />
-                </div>
-                <button type="submit" class="enviarmodo1">Registrar</button>
-            </form>
+            <div class="header_form">
+                <p>New Book</p>
+                <button id="cerrar_modal">X</button>
+            </div>
+            <div class="formulario">
+                <form action="" method="post" class="registro">
+                    <div class="info">
+                        <label for="nombre1">Name 1:</label>
+                        <input type="text" id="nombre1" name="nombre1" required />
+                    </div>
+                    <div class="info">
+                        <label for="nombre2">Name 2:</label>
+                        <input type="text" id="nombre2" name="nombre2" required />
+                    </div>
+                    <button type="submit" class="enviarmodo1">Registrar</button>
+                </form>
+            </div>
         </dialog>
 
         <script src="script.js"></script>
