@@ -80,7 +80,7 @@ body {
     margin: 3rem;
     border-radius: 20px;
     overflow: hidden;
-    background-color: white;
+    background-color: aqua;
 }
 
 .datos > p {
@@ -100,7 +100,7 @@ body {
     flex: 3;
     overflow: hidden;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    background-color: white;
 }
 
 .modo > p {
@@ -137,6 +137,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 4;
+    background-color: white;
 }
 
 .estado > h2 {
@@ -150,11 +151,71 @@ body {
     margin-bottom: 1rem;
 }
 
+#modal1 {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.formulario > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_form > button {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.header_form > p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 .info {
     display: flex;
     flex-direction: column;
     flex: 5;
     margin-inline: 0.5rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.info > label {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.info > input {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    border: 1px solid black;
+    border-radius: 6px;
+    height: 1.8rem;
+}
+
+.enviarmodo1 {
+    font-size: large;
+    margin-top: 10px;
+    width: 35%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    background-color: rgb(5, 168, 5);
+    color: white;
+    font-weight: bold;
 }
 
 .estado > button {
