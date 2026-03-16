@@ -25,11 +25,12 @@ body {
 }
 
 .encabezado > img {
-    height: 3.2rem;
+    height: 3.6rem;
 }
 
 .encabezado > h1 {
     font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
 }
 
 .campo {
@@ -49,6 +50,8 @@ body {
     border-radius: 15px;
     margin: 3rem;
     overflow: hidden;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
 }
 
 .casilla {
@@ -85,11 +88,12 @@ body {
 
 .datos > p {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-inline: 0;
     font-weight: bold;
+    font-family: "Orbitron", sans-serif;
 }
 
 .modo {
@@ -108,6 +112,7 @@ body {
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     margin-inline: 0;
+    font-family: "Orbitron", sans-serif;
 }
 
 .pvp1 {
@@ -138,7 +143,8 @@ body {
 
 .pvp1 > p {
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    font-family: "Orbitron", sans-serif;
 }
 
 .estado {
@@ -157,6 +163,7 @@ body {
     margin-inline: 0;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-family: "Orbitron", sans-serif;
 }
 
 #modal1 {
@@ -174,6 +181,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "Orbitron", sans-serif;
 }
 
 .header_form > button {
@@ -207,6 +215,7 @@ body {
 .info > label {
     font-size: 1.4rem;
     margin-bottom: 10px;
+    font-family: "Orbitron", sans-serif;
 }
 
 .info > input {
@@ -215,6 +224,7 @@ body {
     border: 1px solid black;
     border-radius: 6px;
     height: 1.8rem;
+    font-family: "Orbitron", sans-serif;
 }
 
 .enviarmodo1 {
@@ -228,6 +238,7 @@ body {
     background-color: rgb(5, 168, 5);
     color: white;
     font-weight: bold;
+    font-family: "Orbitron", sans-serif;
 }
 
 .enviarmodo1:hover {
@@ -251,6 +262,7 @@ body {
     color: white;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
+    font-family: "Orbitron", sans-serif;
 }
 
 .estado > button:hover {
@@ -265,6 +277,8 @@ body {
     font-size: 1.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bold;
 }
 
 #win {
@@ -275,10 +289,12 @@ body {
     font-size: 1.2rem;
     height: 1.5rem;
     margin-left: 5px;
+    font-family: "Orbitron", sans-serif;
 }
 
 .turnoactual {
     font-size: 1.2rem;
     height: 1.5rem;
     margin-left: 5px;
+    font-family: "Orbitron", sans-serif;
 }
