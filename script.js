@@ -26,6 +26,7 @@ const displayController = (function () {
                 jugador1 = document.getElementById("nombre1").value;
                 jugador2 = document.getElementById("nombre2").value;
                 correcto = true;
+                partida = true;
                 actual = Gamecontroller.iniciojuego();
                 console.log(Gameboard.obtenertablero());
                 modal1.close();
@@ -35,6 +36,8 @@ const displayController = (function () {
                 casilla.addEventListener("click", () => {
                     if (partida == false) {
                         return;
+                    } else if (partida == true && correcto == true) {
+                        pvp1.disabled = true;
                     }
                     if (correcto == true) {
                         let coordenadas = casilla.dataset.coordenada;
@@ -83,6 +86,7 @@ const displayController = (function () {
                 puntuaciones.textContent = "";
                 turnoactual.textContent = "";
                 console.log(Gameboard.obtenertablero());
+                pvp1.disabled = false;
             });
         },
     };
