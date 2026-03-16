@@ -123,6 +123,14 @@ body {
     border-radius: 8px;
 }
 
+.pvp1:hover {
+    cursor: pointer;
+}
+
+.pvp1:active {
+    transform: scale(0.95);
+}
+
 .pvp1 > img {
     height: 5.5rem;
     width: auto;
@@ -177,6 +185,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.header_form > button:hover {
+    cursor: pointer;
+}
+
 .header_form > p {
     font-size: 1.5rem;
     margin-top: 0.5rem;
@@ -218,17 +230,35 @@ body {
     font-weight: bold;
 }
 
+.enviarmodo1:hover {
+    cursor: pointer;
+}
+
+.enviarmodo1:active {
+    transform: scale(0.95);
+}
+
 .estado > button {
     flex: 1;
     margin-inline: 40%;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 1.3rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     background-color: rgb(93, 93, 252);
     font-weight: bold;
     color: white;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.estado > button:hover {
+    cursor: pointer;
+}
+
+.estado > button:active {
+    transform: scale(0.95);
 }
 
 .info > p {
@@ -237,10 +267,18 @@ body {
     margin-bottom: 1rem;
 }
 
+#win {
+    margin-top: 0.2rem;
+}
+
 .puntuaciones {
     font-size: 1.2rem;
+    height: 1.5rem;
+    margin-left: 5px;
 }
 
 .turnoactual {
     font-size: 1.2rem;
+    height: 1.5rem;
+    margin-left: 5px;
 }
