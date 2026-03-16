@@ -11,46 +11,53 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: orange;
 }
 
 .encabezado {
     display: flex;
-    border: 1px solid blue;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     flex: 1;
+    background-color: orange;
+    color: white;
 }
 
 .encabezado > img {
-    height: 2.5rem;
+    height: 3.2rem;
+}
+
+.encabezado > h1 {
+    font-size: 3rem;
 }
 
 .campo {
-    border: 1px solid red;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 5.5rem;
     flex: 6;
     border-radius: 20px;
+    background-color: rgb(245, 243, 243);
 }
 
 .michi {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    border: 1px solid peru;
+    border: 1px solid black;
     border-radius: 15px;
     margin: 3rem;
     overflow: hidden;
 }
 
 .casilla {
-    border: 1px solid pink;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 4rem;
+    background-color: white;
 }
 
 .datos {
@@ -60,14 +67,16 @@ body {
     margin: 3rem;
     border-radius: 20px;
     overflow: hidden;
+    background-color: white;
 }
 
 .datos > p {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-inline: 0;
+    font-weight: bold;
 }
 
 .modo {
@@ -144,6 +153,9 @@ body {
     font-size: 1.3rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    background-color: rgb(93, 93, 252);
+    font-weight: bold;
+    color: white;
 }
 
 .info > p {
