@@ -8,12 +8,17 @@ const displayController = (function () {
     const reset = document.querySelector(".reiniciar");
     const modal1 = document.getElementById("modal1");
     const registro = document.querySelector(".registro");
+    const cerrarmodal = document.getElementById("cerrar_modal");
     let correcto = false;
     let actual;
     return {
         mostrar() {
             pvp1.addEventListener("click", () => {
                 modal1.showModal();
+            });
+
+            cerrarmodal.addEventListener("click", () => {
+                modal1.close();
             });
 
             registro.addEventListener("submit", (e) => {
